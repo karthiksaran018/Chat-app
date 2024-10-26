@@ -20,7 +20,7 @@ app.use(cors());
 app.use(express.json()); // Parse JSON bodies
 
 // MongoDB Connection
-const mongoURI = 'mongodb+srv://imsaran018:saran018@ispark.lvqhd.mongodb.net/chatdb?retryWrites=true&w=majority&appName=iSpark';
+const mongoURI = process.env.MONGO_URI || 'mongodb+srv://imsaran018:saran018@ispark.lvqhd.mongodb.net/chatdb?retryWrites=true&w=majority&appName=iSpark';
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
